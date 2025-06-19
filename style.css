@@ -846,16 +846,32 @@ h2.vsw-page-title{text-align:center;padding:15px;background:linear-gradient(to r
     z-index: 1000;
 }
 
-/* मेन्यू आइकॉन */
+/* मेन्यू आइकॉन (न्यूमॉर्फिक इफ़ेक्ट के साथ) */
 .cm__menu-toggle {
-    width: 60px;
+    width: 50px;
     height: 60px;
-    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhCbarYqIlzfRqB0VbKZvHmwyyPtvU0Y2Nkv1izHDcL_tlX1A6d3u8KtV85jfUhqqZcsUDKds1yQDDn6p_MJbM_wec1tyUHOw50hsTHKlpVzeEfhZR_gkFsL_O4OG0zytlGbKUlJaRQPSDfx7SAqI4D6B_SnWzxSQ-lWz3ld38THUIYWdDwsXE7bBuJx7EN/s374/IMG_20250404_055208.png');
+    background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeGkY9cqufHM-Zyid4Hp3dPWzBol47rdrH6iarCsh9Sd0cGnbag2jHfSXiTvWydNeytP2jzINh-qLm2m6eEmzpCV796GSYBDOPujUZwk-Iw0lrMQWOuOq_jAqcReL6KI5PaHzwR7pyGz3CtpB6gqr0FLIYQGrg9su4E8z_gktYZxlTpDi4dYUCBwYnojk/s163/IMG_20250619_230438.png');
     background-size: cover;
-    border-radius: 50%;
+    background-position: center;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    
+    /* --- मुख्य बदलाव यहाँ है --- */
+    /* 1. बैकग्राउंड का रंग पेज से मिलता-जुलता रखें (उदाहरण के लिए) */
+    background-color: #e0e0e0;
+    
+    /* 2. 'पतला और गहरा' इफ़ेक्ट के लिए शैडो */
+    box-shadow: 6px 6px 12px #bebebe, 
+                -6px -6px 12px #ffffff;
+
+    /* 3. स्मूथ ट्रांजीशन */
+    transition: all 0.2s ease-in-out;
+}
+
+/* क्लिक करने पर (दबने वाला इफ़ेक्ट) */
+.cm__menu-toggle:active {
+    box-shadow: inset 6px 6px 12px #bebebe, 
+                inset -6px -6px 12px #ffffff;
 }
 
 .cm__menu-toggle:hover {
